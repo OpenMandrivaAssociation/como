@@ -52,6 +52,7 @@ BuildRequires:  cmake(Qt6Gui)
 BuildRequires:  cmake(Qt6Quick)
 BuildRequires:  cmake(Qt6Test)
 BuildRequires:  cmake(Qt6UiTools)
+BuildRequires:  cmake(Qt6UiPlugin)
 BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  cmake(Wrapland)
 BuildRequires:  libcap-utils
