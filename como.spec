@@ -1,67 +1,60 @@
 # Internal QML imports
 %global __requires_exclude qt6qmlimport\\(org\\.kde\\.KWin\\.Effect\\.WindowView.*
 
-%global commit 33c6450166d0ec56b7261016358909d245e488f4
+#global commit 33c6450166d0ec56b7261016358909d245e488f4
 %global kf6_version 6.0.0
 %define qt6_version 6.6.0
 %define wlr_version 0.19
 
 Name:           como
-Version:        0.2.80
-Release:        0
+Version:        0.2.0
+Release:        1
 Summary:        The Compositor Modules (COMO)
 License:        GPL-2.0-or-later AND GPL-3.0-or-later
 Group:          System/GUI/KDE
 URL:            https://github.com/winft/%{name}
-Source:         %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
-Patch0:         find-wlroots.patch
-# Patch1:         remove-breeze-tabbox.patch
-# Patch2:         path.patch
-Patch3:         add-effect-config.patch
-Patch4:         drop-wlr-renderer.patch
-BuildRequires:  fdupes
-BuildRequires:  kf6-extra-cmake-modules >= %{kf6_version}
+Source:         %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+
 BuildRequires:  pkgconfig
-BuildRequires:  qt6-core-private-devel >= %{qt6_version}
-BuildRequires:  qt6-gui-private-devel >= %{qt6_version}
 BuildRequires:  systemd-rpm-macros
-BuildRequires:  cmake(Breeze) >= %{_plasma6_bugfix}
-BuildRequires:  cmake(KDecoration2) >= %{_plasma6_bugfix}
-BuildRequires:  cmake(KF6Auth) >= %{kf6_version}
-BuildRequires:  cmake(KF6Config) >= %{kf6_version}
+BuildRequires:  cmake(Breeze) >= 6.0.0
+BuildRequires:  cmake(KDecoration2) >= 6.0.0
+BuildRequires:  cmake(KF6Auth)
+BuildRequires:  cmake(KF6Config)
 # BuildRequires:  cmake(KF6ConfigWidgets) >= %%{kf6_version}
-BuildRequires:  cmake(KF6ColorScheme) >= %{kf6_version}
-BuildRequires:  cmake(KF6CoreAddons) >= %{kf6_version}
-BuildRequires:  cmake(KF6Crash) >= %{kf6_version}
-BuildRequires:  cmake(KF6DBusAddons) >= %{kf6_version}
+BuildRequires:  cmake(KF6ColorScheme)
+BuildRequires:  cmake(KF6CoreAddons)
+BuildRequires:  cmake(KF6Crash)
+BuildRequires:  cmake(KF6DBusAddons)
 # BuildRequires:  cmake(KF6Declarative) >= %%{kf6_version}
-BuildRequires:  cmake(KF6DocTools) >= %{kf6_version}
-BuildRequires:  cmake(KF6GlobalAccel) >= %{kf6_version}
-BuildRequires:  cmake(KF6I18n) >= %{kf6_version}
-BuildRequires:  cmake(KF6IdleTime) >= %{kf6_version}
-BuildRequires:  cmake(KF6KCMUtils) >= %{kf6_version}
-BuildRequires:  cmake(KF6Kirigami) >= %{kf6_version}
-BuildRequires:  cmake(KF6NewStuff) >= %{kf6_version}
-BuildRequires:  cmake(KF6Notifications) >= %{kf6_version}
-BuildRequires:  cmake(KF6Package) >= %{kf6_version}
-BuildRequires:  cmake(KF6Service) >= %{kf6_version}
-BuildRequires:  cmake(KF6Svg) >= %{kf6_version}
-BuildRequires:  cmake(KF6WidgetsAddons) >= %{kf6_version}
-BuildRequires:  cmake(KF6WindowSystem) >= %{kf6_version}
-BuildRequires:  cmake(KF6XmlGui) >= %{kf6_version}
-BuildRequires:  cmake(KScreenLocker) >= %{_plasma6_bugfix}
-BuildRequires:  cmake(Plasma) >= %{_plasma6_bugfix}
+BuildRequires:  cmake(KF6DocTools)
+BuildRequires:  cmake(KF6GlobalAccel)
+BuildRequires:  cmake(KF6I18n)
+BuildRequires:  cmake(KF6IdleTime)
+BuildRequires:  cmake(KF6KCMUtils)
+BuildRequires:  cmake(KF6Kirigami)
+BuildRequires:  cmake(KF6NewStuff)
+BuildRequires:  cmake(KF6Notifications)
+BuildRequires:  cmake(KF6Package)
+BuildRequires:  cmake(KF6Service)
+BuildRequires:  cmake(KF6Svg)
+BuildRequires:  cmake(KF6WidgetsAddons)
+BuildRequires:  cmake(KF6WindowSystem)
+BuildRequires:  cmake(KF6XmlGui)
+BuildRequires:  cmake(KScreenLocker)
+BuildRequires:  cmake(Plasma)
 BuildRequires:  cmake(QAccessibilityClient6)
-BuildRequires:  cmake(Qt6Concurrent) >= %{qt6_version}
-BuildRequires:  cmake(Qt6Core) >= %{qt6_version}
-BuildRequires:  cmake(Qt6Core5Compat) >= %{qt6_version}
-BuildRequires:  cmake(Qt6DBus) >= %{qt6_version}
-BuildRequires:  cmake(Qt6Quick) >= %{qt6_version}
-BuildRequires:  cmake(Qt6Test) >= %{qt6_version}
-BuildRequires:  cmake(Qt6UiTools) >= %{qt6_version}
-BuildRequires:  cmake(Qt6Widgets) >= %{qt6_version}
+BuildRequires:  cmake(Qt6Concurrent)
+BuildRequires:  cmake(Qt6Core)
+BuildRequires:  cmake(Qt6Core5Compat)
+BuildRequires:  cmake(Qt6DBus)
+BuildRequires:  cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Quick)
+BuildRequires:  cmake(Qt6Test)
+BuildRequires:  cmake(Qt6UiTools)
+BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  cmake(Wrapland)
-BuildRequires:  libcap-progs
+BuildRequires:  libcap-utils
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(epoxy)
 BuildRequires:  pkgconfig(fontconfig)
@@ -72,7 +65,7 @@ BuildRequires:  pkgconfig(pixman-1)
 BuildRequires:  pkgconfig(wayland-egl)
 BuildRequires:  pkgconfig(wayland-cursor)
 BuildRequires:  pkgconfig(wayland-server)
-BuildRequires:  pkgconfig(wlroots-%{wlr_version})
+BuildRequires:  pkgconfig(wlroots-0.18)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(xcb-composite)
@@ -93,17 +86,17 @@ BuildRequires:  pkgconfig(xcb-xkb)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(xkbcommon-x11)
 BuildRequires:  pkgconfig(xwayland)
-Requires:       breeze6-decoration >= %{_plasma6_bugfix}
-Requires:       kf6-kirigami-imports >= %{kf6_version}
-Requires:       kglobalacceld6  >= %{_plasma6_bugfix}
+Requires:       breeze6-decoration
+Requires:       kf6-kirigami-import
+Requires:       kglobalacceld6
 # WinFT
 Requires:       wrapland
 # SECTION QML dependencies
-Requires:       kf6-kdeclarative-imports >= %{kf6_version}
-Requires:       kf6-kitemmodels-imports >= %{kf6_version}
-Requires:       plasma6-framework-components >= %{_plasma6_bugfix}
-Requires:       qt6-declarative-imports >= %{qt6_version}
-Requires:       qt6-multimedia-imports >= %{qt6_version}
+Requires:       kf6-kdeclarative-imports
+Requires:       kf6-kitemmodels-imports
+Requires:       plasma6-framework-components
+Requires:       qt6-declarative-imports
+Requires:       qt6-multimedia-imports
 # /SECTION
 # For post and verifyscript
 Requires(post): permissions
@@ -157,12 +150,12 @@ Como Build Environment.
 %autosetup -p1 -n %{name}-%{commit}
 
 %build
-%cmake_kf6
+%cmake
 
-%kf6_build
+%make_build
 
 %install
-%kf6_install
+%make_install -C build
 
 %fdupes %{buildroot}%{_kf6_libdir}
 %fdupes %{buildroot}%{_kf6_sharedir}
