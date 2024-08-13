@@ -148,7 +148,7 @@ Conflicts:      kwinft-devel
 Como Build Environment.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %cmake
