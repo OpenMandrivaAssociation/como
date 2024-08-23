@@ -17,6 +17,7 @@ Source:         %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig
 BuildRequires:  systemd-rpm-macros
+BuildRequires:  cmake(Catch2)
 BuildRequires:  cmake(Breeze) >= 6.0.0
 BuildRequires:  cmake(KDecoration2) >= 6.0.0
 BuildRequires:  cmake(KF6Auth)
